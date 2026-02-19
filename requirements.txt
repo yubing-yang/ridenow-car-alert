@@ -1,3 +1,6 @@
 requests
 colorama
 geopy
+telegram
+dotenv
+logger
