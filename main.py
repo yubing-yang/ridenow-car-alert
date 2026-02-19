@@ -103,7 +103,7 @@ def main():
 
     while True:
         
-        local_time = time.strftime("%H:%M %P", time.localtime())
+        local_time = time.strftime("%H:%M %p", time.localtime())
 
         data = fetch_info()
 
