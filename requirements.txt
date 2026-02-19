@@ -1,5 +1,4 @@
 requests
-colorama
 geopy
 telegram
 dotenv
