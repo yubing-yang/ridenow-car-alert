@@ -7,6 +7,7 @@ import sys
 from dotenv import load_dotenv
 
 from geopy.geocoders import Nominatim
+from geopy.location import Location
 
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
@@ -77,9 +78,17 @@ def find_bmw(data: dict) -> tuple[bool, float | None, float | None]:
     return False, None, None
 
 
-def find_bmw_location(bmw_information) -> str:
+def find_bmw_location(bmw_information) -> str | None:
     try:
-        return geolocator.reverse((bmw_information[TUPLE_LATITUDE_INDEX], bmw_information[TUPLE_LONGITUDE_INDEX]), language='en')
+        location = geolocator.reverse(
+            (
+            bmw_information[TUPLE_LATITUDE_INDEX],
+            bmw_information[TUPLE_LONGITUDE_INDEX]
+            ),
+            language='en'
+        )
+        return location.address if location else None
+    
     except Exception as error:
         logger.warning("Reverse geolocator failed")
         return None
