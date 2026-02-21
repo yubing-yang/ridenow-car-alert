@@ -1,6 +1,6 @@
-# bmw-alert
+# ridenow-car-alert
 
-Python script to request RideNow API at set intervals and see if a BMW is available for rent.
+Python script to view the public RideNow cars API to see if a specified car is available.
 
 ## Dependencies Installation
-```pip install -r requirements.txt```
+```python -m pip install -r requirements.txt```

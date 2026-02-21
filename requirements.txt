@@ -1,5 +1,3 @@
 requests
 geopy
-python-telegram-bot
-python-dotenv
 logger
